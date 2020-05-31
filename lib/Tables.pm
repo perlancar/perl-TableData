@@ -6,7 +6,7 @@ package Tables;
 # VERSION
 
 1;
-# ABSTRACT: Module that contains table data
+# ABSTRACT: Specification for Tables::*, modules that contains table data
 
 =head1 SYNOPSIS
 
