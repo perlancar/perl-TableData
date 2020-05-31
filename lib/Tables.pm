@@ -23,8 +23,8 @@ Use one of the C<Tables::*> modules.
 B<NOTE: EARLY SPECIFICATION; THINGS WILL STILL CHANGE A LOT>.
 
 C<Tables::*> modules are modules that contain two-dimensional table data. The
-table can be accessed via a standard interface (see L<TablesRole::Basic>). An
-example of table data would be list of countries along with their names and
+table can be accessed via a standard interface (see L<TablesRole::Spec::Basic>).
+An example of table data would be list of countries along with their names and
 country code, or a list of CPAN authors along with their published email
 addresses.
 
@@ -42,7 +42,7 @@ The standard interface provides a convenient and consistent way to access the
 data, from accessing the rows, getting the column names, and dumping to CSV or
 Perl structure for other tools to operate on.
 
-To get started, see L<TablesRole::Basic> and one of existing C<Tables::*>
+To get started, see L<TablesRole::Spec::Basic> and one of existing C<Tables::*>
 module.
 
 
