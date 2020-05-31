@@ -46,6 +46,15 @@ To get started, see L<TablesRole::Basic> and one of existing C<Tables::*>
 module.
 
 
+=head1 NAMESPACE ORGANIZATION
+
+C<Tables> (this module) is the specification.
+
+C<TablesRole::*> the roles.
+
+All the modules under C<Tables::*> will be modules with actual table data.
+
+
 =head1 FAQ
 
 
@@ -53,3 +62,6 @@ module.
 
 L<WordList> is an older, related project. Where C<WordList> packages a list of
 strings as Perl module, C<Tables> tries to do the same for table data.
+
+Modules and CLIs that manipulate table data: L<TableData::Object>, L<td> (from
+L<App::td>).
