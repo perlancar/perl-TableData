@@ -52,8 +52,11 @@ Must return the number of columns of the table.
 Usage:
 
  my @colnames = $table->get_column_names;
+ my $colnames = $table->get_column_names;
 
-Must return a list containing the names of columns, ordered.
+Must return a list (or arrayref) containing the names of columns, ordered. For
+ease of use, when in list context the method must return a list, and in scalar
+context must return an arrayref.
 
 =head2 get_row_arrayref
 
