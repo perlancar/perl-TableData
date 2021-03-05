@@ -54,6 +54,9 @@ C<TablesRole::*> the roles.
 
 All the modules under C<Tables::*> will be modules with actual table data.
 
+C<TablesCollection-*> name for distribution that contains several C<Tables>
+modules.
+
 
 =head1 FAQ
 
