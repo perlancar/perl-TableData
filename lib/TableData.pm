@@ -1,4 +1,4 @@
-package Tables;
+package TableData;
 
 # AUTHORITY
 # DATE
@@ -6,11 +6,11 @@ package Tables;
 # VERSION
 
 1;
-# ABSTRACT: Specification for Tables::*, modules that contains table data
+# ABSTRACT: Specification for TableData::*, modules that contains table data
 
 =head1 SYNOPSIS
 
-Use one of the C<Tables::*> modules.
+Use one of the C<TableData::*> modules.
 
 
 =head1 SPECIFICATION VERSION
@@ -22,11 +22,11 @@ Use one of the C<Tables::*> modules.
 
 B<NOTE: EARLY SPECIFICATION; THINGS WILL STILL CHANGE A LOT>.
 
-C<Tables::*> modules are modules that contain two-dimensional table data. The
-table can be accessed via a standard interface (see L<TablesRole::Spec::Basic>).
-An example of table data would be list of countries along with their names and
-country code, or a list of CPAN authors along with their published email
-addresses.
+C<TableData::*> modules are modules that contain two-dimensional table data. The
+table can be accessed via a standard interface (see
+L<TableDataRole::Spec::Basic>). An example of table data would be list of
+countries along with their names and country code, or a list of CPAN authors
+along with their published email addresses.
 
 Why put data in a Perl module, as a Perl distribution? To leverage the Perl/CPAN
 toolchain and infrastructure: 1) ease of installation, update, and
@@ -42,20 +42,20 @@ The standard interface provides a convenient and consistent way to access the
 data, from accessing the rows, getting the column names, and dumping to CSV or
 Perl structure for other tools to operate on.
 
-To get started, see L<TablesRole::Spec::Basic> and one of existing C<Tables::*>
-module.
+To get started, see L<TableDataRole::Spec::Basic> and one of existing
+C<TableData::*> module.
 
 
 =head1 NAMESPACE ORGANIZATION
 
-C<Tables> (this module) is the specification.
+C<TableData> (this module) is the specification.
 
-C<TablesRole::*> the roles.
+C<TableDataRole::*> the roles.
 
-All the modules under C<Tables::*> will be modules with actual table data.
+All the modules under C<TableData::*> will be modules with actual table data.
 
-C<TablesCollection-*> name for distribution that contains several C<Tables>
-modules.
+C<TableDataCollection-*> name for distribution that contains several
+C<TableData> modules.
 
 
 =head1 FAQ
@@ -63,8 +63,9 @@ modules.
 
 =head1 SEE ALSO
 
-L<WordList> is an older, related project. Where C<WordList> packages a list of
-strings as Perl module, C<Tables> tries to do the same for table data.
+L<ArrayData>, L<HashData> are related projects.
 
-Modules and CLIs that manipulate table data: L<TableData::Object>, L<td> (from
-L<App::td>).
+L<WordList> is an older, related project.
+
+Modules and CLIs that manipulate table data: L<Data::TableData::Object>, L<td>
+(from L<App::td>).

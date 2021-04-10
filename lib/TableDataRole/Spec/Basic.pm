@@ -1,4 +1,4 @@
-package TablesRole::Spec::Basic;
+package TableDataRole::Spec::Basic;
 
 # AUTHORITY
 # DATE
@@ -18,7 +18,7 @@ requires 'get_row_hashref';
 requires 'reset_iterator';
 
 1;
-# ABSTRACT: Required methods for all Tables::* modules
+# ABSTRACT: Required methods for all TableData::* modules
 
 =head1 REQUIRED METHODS
 
@@ -26,7 +26,7 @@ requires 'reset_iterator';
 
 Usage:
 
- my $table = Tables::Foo->new([ %args ]);
+ my $table = TableData::Foo->new([ %args ]);
 
 Constructor. Must accept a pair of argument names and values.
 
