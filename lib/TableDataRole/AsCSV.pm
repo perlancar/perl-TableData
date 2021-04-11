@@ -9,6 +9,8 @@ use 5.010001;
 use strict;
 use warnings;
 
+use Role::Tiny;
+
 sub as_csv {
     state $csv = do {
         require Text::CSV;
@@ -19,9 +21,11 @@ sub as_csv {
 
     my $res = "";
     $table->reset_row_iterator;
-    $res .= $csv->combine( $table->get_column_names );
+    $csv->combine( $table->get_column_names ); # XXX check status?
+    $res .= $csv->string . "\n";
     while (defined(my $row = $table->get_row_arrayref)) {
-        $res .= $csv->combine(@$row);
+        $csv->combine(@$row); # XXX check status
+        $res .= $csv->string . "\n";
     }
     $res;
 }
