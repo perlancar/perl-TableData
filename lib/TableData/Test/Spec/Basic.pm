@@ -23,6 +23,11 @@ sub new {
     bless {index=>0}, $class;
 }
 
+sub _rows {
+    my $table = shift;
+    $rows;
+}
+
 sub get_row_arrayref {
     my $self = shift;
     return undef unless $rows->[ $self->{index} ];
