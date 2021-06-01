@@ -52,10 +52,13 @@ C<TableData> (this module) is the specification.
 
 C<TableDataRole::*> the roles.
 
-All the modules under C<TableData::*> will be modules with actual table data.
+C<TableDataRoles::*> is the name for distribution that contain several role
+modules.
 
-C<TableDataCollection-*> name for distribution that contains several
-C<TableData> modules.
+All the modules under C<TableData::*> are modules with actual table data.
+
+C<TableDataBundle-*> name for distribution that contains several C<TableData>
+modules.
 
 
 =head1 FAQ
