@@ -1,3 +1,10 @@
+0.2.1   2021-06-01  Released-By: PERLANCAR; Urgency: medium
+
+	- Mention some subnamespaces under TableData::* like TableData::Lingua::
+	  and TableData::Locale::. Add nmespace TableDataBase{,s}. Add nmespace
+	  TableDataRoles, change TableDataCollection -> TableDataBundle.
+
+
 0.2.0   2021-06-01  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
 
         [Incompatible changes]
