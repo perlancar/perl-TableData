@@ -55,6 +55,11 @@ C<TableDataRole::*> the roles.
 C<TableDataRoles::*> is the name for distribution that contain several role
 modules.
 
+C<TableDataBase::*> for base classes.
+
+C<TableDataBases::*> is the name for distribution that contain several
+C<TableDataBase> modules.
+
 All the modules under C<TableData::*> are modules with actual table data.
 
 C<TableDataBundle-*> name for distribution that contains several C<TableData>
