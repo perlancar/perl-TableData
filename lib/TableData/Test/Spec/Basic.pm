@@ -17,22 +17,36 @@ my $rows = [
     {a=>3, b=>4},
     {a=>"5 2", b=>"6,2"},
 ];
+my $columns = [qw/a b/];
 
 sub new {
     my $class = shift;
-    bless {index=>0}, $class;
+    bless {pos=>0}, $class;
 }
 
 sub _rows {
-    my $table = shift;
     $rows;
 }
 
-sub get_row_arrayref {
+sub reset_iterator {
+}
+
+sub has_next_item {
     my $self = shift;
-    return undef unless $rows->[ $self->{index} ];
-    my $hashref = $rows->[ $self->{index}++ ];
-    [map {$hashref->{$_}} sort keys %$hashref];
+    $self->{pos} < @$rows;
+}
+
+sub get_next_item {
+    my $self = shift;
+    die "StopIteration" if $self->{pos} >= @$rows;
+    my $row_hashref = $rows->[ $self->{pos}++ ];
+    [map {$row_hashref->{$_}} @$columns];
+}
+
+sub get_next_row_hashref {
+    my $self = shift;
+    die "StopIteration" if $self->{pos} >= @$rows;
+    $rows->[ $self->{pos}++ ];
 }
 
 sub get_row_hashref {
