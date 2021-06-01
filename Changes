@@ -5,6 +5,10 @@
         - Incorporate Role::TinyCommons::Iterator::Resettable, like HashData and
           ArrayData. Method names changed/added/removed.
 
+        [Removed]
+
+        - Remove TableDataRole::Spec::Seekable.
+
 
 0.1.5   2021-04-11  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
 
