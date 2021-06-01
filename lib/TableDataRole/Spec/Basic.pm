@@ -47,13 +47,13 @@ sub get_all_rows_arrayref {
 sub get_all_rows_hashref {
     my $self = shift;
 
-    my $items = [];
+    my @items;
     $self->reset_iterator;
     while ($self->has_next_item) {
         my $row = $self->get_next_row_hashref;
-        push @$items, $row;
+        push @items, $row;
     }
-    $items;
+    @items;
 }
 
 sub each_row_arrayref {
@@ -125,6 +125,8 @@ Usage:
 
 Must return true if table has next row when iterating, false otherwise.
 
+From L<Role::TinyCommons::Iterator::Resettable>.
+
 =head2 reset_iterator
 
 Usage:
@@ -132,6 +134,18 @@ Usage:
  $table->reset_iterator;
 
 Reset iterator so that the next L</get_next_item> retrieves the first row.
+
+From L<Role::TinyCommons::Iterator::Resettable>.
+
+=head2 get_iterator_pos
+
+Usage:
+
+ $table->get_iterator_pos;
+
+Get iterator position.
+
+From L<Role::TinyCommons::Iterator::Resettable>.
 
 =head2 get_next_item
 
@@ -207,16 +221,17 @@ Alias for L</get_next_item>.
 
 Usage:
 
- my $rows = $table->get_all_items;
+ my @rows = $table->get_all_items;
 
-Return all rows as an array of arrayrefs. Resets the row iterator. Basically
+Return all rows as a list of arrayrefs. Resets the row iterator. Basically
 shortcut for:
 
- my $rows = [];
+ my @rows;
  $table->reset_iterator;
  while ($table->has_next_item) {
-     push @$rows, $table->get_next_item;
+     push @rows, $table->get_next_item;
  }
+ @rows;
 
 You can provide a more efficient implementation if your source data allows it.
 
@@ -230,16 +245,17 @@ Alias for L</get_all_items>.
 
 Usage:
 
- my $rows = $table->get_all_rows_hashref;
+ my @rows = $table->get_all_rows_hashref;
 
-Return all rows as an array of hashrefs. Resets the row iterator. Basically
+Return all rows as a list of hashrefs. Resets the row iterator. Basically
 shortcut for:
 
- my $rows = [];
+ my @rows;
  $table->reset_iterator;
  while ($table->has_next_item) {
-     push @$rows, $table->get_next_row_hashref;
+     push @rows, $table->get_next_row_hashref;
  }
+ @rows;
 
 You can provide a more efficient implementation if your source data allows it.
 

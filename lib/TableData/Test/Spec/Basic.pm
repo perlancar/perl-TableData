@@ -29,6 +29,13 @@ sub _rows {
 }
 
 sub reset_iterator {
+    my $self = shift;
+    $self->{pos} = 0;
+}
+
+sub get_iterator_pos {
+    my $self = shift;
+    $self->{pos};
 }
 
 sub has_next_item {
@@ -53,16 +60,6 @@ sub get_row_hashref {
     my $self = shift;
     return undef unless $rows->[ $self->{index} ];
     $rows->[ $self->{index}++ ];
-}
-
-sub get_row_iterator_index {
-    my $self = shift;
-    $self->{index};
-}
-
-sub reset_row_iterator {
-    my $self = shift;
-    $self->{index} = 0;
 }
 
 sub get_column_count {
