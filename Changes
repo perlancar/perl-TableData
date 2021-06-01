@@ -1,3 +1,11 @@
+0.2.0   2021-06-01  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
+
+        [Incompatible changes]
+
+        - Incorporate Role::TinyCommons::Iterator::Resettable, like HashData and
+          ArrayData. Method names changed/added/removed.
+
+
 0.1.5   2021-04-11  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
 
 	[Removed]
