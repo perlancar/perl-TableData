@@ -1,16 +1,16 @@
 package TableData::Test::Spec::Basic;
 
-# AUTHORITY
-# DATE
-# DIST
-# VERSION
-
 use strict;
 use warnings;
 
 use Role::Tiny::With;
 
 with 'TableDataRole::Spec::Basic';
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my $rows = [
     {a=>1, b=>2},

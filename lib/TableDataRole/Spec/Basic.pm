@@ -1,11 +1,12 @@
-package TableDataRole::Spec::Basic;
+ ## no critic: TestingAndDebugging::RequireUseStrict
+ package TableDataRole::Spec::Basic;
+
+use Role::Tiny;
 
 # AUTHORITY
 # DATE
 # DIST
 # VERSION
-
-use Role::Tiny;
 
 # constructor
 requires 'new';
