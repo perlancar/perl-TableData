@@ -58,7 +58,7 @@ sub get_next_row_hashref {
 
 sub get_row_hashref {
     my $self = shift;
-    return undef unless $rows->[ $self->{index} ];
+    return unless $rows->[ $self->{index} ];
     $rows->[ $self->{index}++ ];
 }
 
