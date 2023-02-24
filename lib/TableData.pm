@@ -71,27 +71,38 @@ C<TableData::Locale::ID::Province> (list of Indonesian provinces).
 
 =head2 TableData::Lingua::*
 
-For human-language-related data
-
-Examples: L<TableData::Lingua::Word::EN::Adjective::TalkEnglish> (list of top
-adjectives from talkenglish.com website, along with some other data like
-frequency). More specific C<TableData::Lingua::*> subnamespaces are described in entries below.
+For human-language-related data.
 
 =head2 TableData::Lingua::Word::*
 
+For tables that contain word list. This is now preferred namespace to
+L<WordList>, and an alternative for C<ArrayData::Lingua::Word::> namespace.
+
 All C<TableData::Lingua::Word::*> modules should contain the column C<word> so
 they are usable from applications like word games.
+
+A 2-letter ISO language code should be added as subnamespace prefix whenever
+applicable.
+
+Example: L<TableData::Lingua::Word::EN::Adjective::TalkEnglish> (list of top
+adjectives from talkenglish.com website, along with some other data like
+frequency).
 
 =head2 TableData::Lingua::Dict::*
 
 For dictionaries.
 
-Examples: L<TableData::Lingua::Dict::ID::KBBI>,
-L<TableData::Lingua::Dict::ZH::Proverb::StarDict>,
-L<TableData::Lingua::Dict::FR_EN::FreeDict>.
+For monolingual language dictionaries, a 2-letter ISO language code should be
+added as subnamespace prefix. For bilingual dictionaries, a
+C<LANGCODE1_LANGCODE2> should be added as subnamespace prefix.
 
 All C<TableData::Lingua::Dict::*> modules should contain the columns C<entry>
 and C<description>.
+
+Examples: L<L<TableData::Lingua::Dict::Foldoc>,
+L<TableData::Lingua::Dict::ID::KBBI>,
+L<TableData::Lingua::Dict::ZH::Proverb::StarDict>,
+L<TableData::Lingua::Dict::FR_EN::FreeDict>.
 
 =head2 TableDataRole::*
 
