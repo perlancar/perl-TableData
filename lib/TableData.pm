@@ -61,32 +61,9 @@ C<TableData::People::AcmeInc>.
 More specific subnamespaces for more specific types of table data are described
 in entries below.
 
-=head2 TableData::Locale::*
-
-For locale-related data.
-
-Examples: C<TableData::Locale::Country> (list of countries in the world),
-L<TableData::Locale::US::State> (list of US states),
-C<TableData::Locale::ID::Province> (list of Indonesian provinces).
-
 =head2 TableData::Lingua::*
 
 For human-language-related data.
-
-=head2 TableData::Lingua::Word::*
-
-For tables that contain word list. This is now preferred namespace to
-L<WordList>, and an alternative for C<ArrayData::Lingua::Word::> namespace.
-
-All C<TableData::Lingua::Word::*> modules should contain the column C<word> so
-they are usable from applications like word games.
-
-A 2-letter ISO language code should be added as subnamespace prefix whenever
-applicable.
-
-Example: L<TableData::Lingua::Word::EN::Adjective::TalkEnglish> (list of top
-adjectives from talkenglish.com website, along with some other data like
-frequency).
 
 =head2 TableData::Lingua::Dict::*
 
@@ -103,6 +80,29 @@ Examples: L<L<TableData::Lingua::Dict::Foldoc>,
 L<TableData::Lingua::Dict::ID::KBBI>,
 L<TableData::Lingua::Dict::ZH::Proverb::StarDict>,
 L<TableData::Lingua::Dict::FR_EN::FreeDict>.
+
+=head2 TableData::Lingua::Word::*
+
+For tables that contain word list. This is now preferred namespace to
+L<WordList>, and an alternative for C<ArrayData::Lingua::Word::> namespace.
+
+All C<TableData::Lingua::Word::*> modules should contain the column C<word> so
+they are usable from applications like word games.
+
+A 2-letter ISO language code should be added as subnamespace prefix whenever
+applicable.
+
+Example: L<TableData::Lingua::Word::EN::Adjective::TalkEnglish> (list of top
+adjectives from talkenglish.com website, along with some other data like
+frequency).
+
+=head2 TableData::Locale::*
+
+For locale-related data.
+
+Examples: C<TableData::Locale::Country> (list of countries in the world),
+L<TableData::Locale::US::State> (list of US states),
+C<TableData::Locale::ID::Province> (list of Indonesian provinces).
 
 =head2 TableDataRole::*
 
