@@ -91,7 +91,7 @@ C<LANGCODE1_LANGCODE2> should be added as subnamespace prefix.
 All C<TableData::Lingua::Dict::*> modules should contain the columns C<entry>
 and C<description>.
 
-Examples: L<L<TableData::Lingua::Dict::Foldoc>,
+Examples: L<TableData::Lingua::Dict::Foldoc>,
 L<TableData::Lingua::Dict::ID::KBBI>,
 L<TableData::Lingua::Dict::ZH::Proverb::StarDict>,
 L<TableData::Lingua::Dict::FR_EN::FreeDict>.
