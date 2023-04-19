@@ -61,6 +61,21 @@ C<TableData::People::AcmeInc>.
 More specific subnamespaces for more specific types of table data are described
 in entries below.
 
+=head2 TableData::Calendar::*
+
+For calendar-related data.
+
+=head2 TableData::Calendar::Date::*
+
+For table containing calendar dates.
+
+Examples:
+
+C<TableData::Calendar::Date::Holiday::ID> contains holiday dates for Indonesia.
+
+C<TableData::Calendar::Date::Holiday::AU::TAS> contains holiday dates for
+Tasmania, Australia.
+
 =head2 TableData::Lingua::*
 
 For human-language-related data.
