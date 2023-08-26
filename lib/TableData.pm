@@ -162,15 +162,17 @@ C<TableData::> modules).
 
 =head2 How do I pick random row(s) from a table?
 
-Apply the L<Role::TinyCommons::Collection::PickItems::Any> role. This will
-provide you the C<pick_item> and C<pick_items> methods. For example, to select a
-random quoute from L<TableData::Quote::JamesFT>:
+Apply one of the appropriate C<Role::TinyCommons::Collection::PickItems::*>
+roles, e.g. L<Role::TinyCommons::Collection::PickItems::Iterator> (which can
+always be used, but other role might offer some speedup). This will provide you
+the C<pick_item> and C<pick_items> methods. For example, to select a random
+quoute from L<TableData::Quote::JamesFT>:
 
  use Role::Tiny;
  use TableData::Quote::JamesFT;
 
  my $td = TableData::Quote::JamesFT->new;
- Role::Tiny->apply_roles_to_object($td, 'Role::TinyCommons::Collection::PickItems::Any');
+ Role::Tiny->apply_roles_to_object($td, 'Role::TinyCommons::Collection::PickItems::Iterator');
 
  my $row = $td->pick_item;
 

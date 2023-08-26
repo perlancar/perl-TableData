@@ -1,5 +1,5 @@
- ## no critic: TestingAndDebugging::RequireUseStrict
- package TableDataRole::Spec::Basic;
+## no critic: TestingAndDebugging::RequireUseStrict
+package TableDataRole::Spec::Basic;
 
 use Role::Tiny;
 
@@ -8,22 +8,24 @@ use Role::Tiny;
 # DIST
 # VERSION
 
-# constructor
+### constructor
+
 requires 'new';
 
-# mixin
+### mixins
+
 with 'Role::TinyCommons::Iterator::Resettable';
 
-# additional method names to return hashref
+### additional method names to return hashref
+
 requires 'get_next_row_hashref';
 
-# column information
+### column information
+
 requires 'get_column_count';
 requires 'get_column_names';
 
-###
-
-# aliases, for convenience and clarity
+### aliases, for convenience and clarity
 
 sub has_next_row {
     my $self = shift;
