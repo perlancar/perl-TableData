@@ -87,27 +87,30 @@ C<TableData::*> modules let you iterate rows using a resettable iterator
 interface (L<Role::TinyCommons::Iterator::Resettable>). They also let you get
 information about the columns.
 
- category                     method name                note
- --------                     -----------                -------
- instantiating                new(%args)
+ category                     method name                note                        modifies iterator?
+ --------                     -----------                -------                     ------------------
+ instantiating                new(%args)                                             N/A
 
- iterating rows               has_next_item()
-                              has_next_row()             Alias for has_next_item()
-                              get_next_item()
-                              get_next_row_arrayref()    Alias for get_next_item()
-                              get_next_row_hashref()
-                              reset_iterator()
+ iterating rows               has_next_item()                                        no
+                              has_next_row()             Alias for has_next_item()   no
+                              get_next_item()                                        yes (moves forward 1 position)
+                              get_next_row_arrayref()    Alias for get_next_item()   yes (moves forward 1 position)
+                              get_next_row_hashref()                                 yes *moves forward 1 position)
+                              reset_iterator()                                       yes (resets)
 
- iterating rows (alt)         each_item()
-                              each_row_arrayref()        Alias for each_item()
-                              each_row_hashref()
+ iterating rows (alt)         each_item()                                            yes (resets)
+                              each_row_arrayref()        Alias for each_item()       yes (resets)
+                              each_row_hashref()                                     yes (resets)
 
- getting all rows             get_all_items()
-                              get_all_rows_arrayref()    Alias for get_all_items()
-                              get_all_rows_hashref()
+ getting all rows             get_all_items()                                        yes (resets)
+                              get_all_rows_arrayref()    Alias for get_all_items()   yes (resets)
+                              get_all_rows_hashref()                                 yes (resets)
 
- getting column information   get_column_names()
-                              get_column_count()
+ getting row count            get_item_count()                                       yes (resets) / no (for some implementations)
+                              get_row_count()            Alias for get_item_count()  yes (resets) / no (for some implementations)
+
+ getting column information   get_column_names()                                     no
+                              get_column_count()                                     no
 
 
 =head1 REQUIRED METHODS
@@ -177,6 +180,8 @@ Must return the number of columns of the table.
 
 All tables must have finite number of columns.
 
+Should not reset iterator.
+
 =head2 get_column_names
 
 Usage:
@@ -187,6 +192,8 @@ Usage:
 Must return a list (or arrayref) containing the names of columns, ordered. For
 ease of use, when in list context the method must return a list, and in scalar
 context must return an arrayref.
+
+Should not reset iterator.
 
 
 =head1 PROVIDED METHODS

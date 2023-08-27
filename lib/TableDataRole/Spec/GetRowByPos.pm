@@ -43,9 +43,9 @@ L<Role::TinyCommons::Collection::GetItemByPos>
 
 =head2 get_item_at_pos
 
-Usage:
+Mixed in from L<Role::TinyCommons::Collection::GetItemByPos>.
 
- my $row = $td->get_item_at_pos($index);
+=head2 has_item_at_pos
 
 Mixed in from L<Role::TinyCommons::Collection::GetItemByPos>.
 
