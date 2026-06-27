@@ -21,23 +21,24 @@ Use one of the C<TableData::*> modules.
 
 =head1 DESCRIPTION
 
-B<NOTE: EARLY SPECIFICATION; THINGS WILL STILL CHANGE A LOT>.
-
 C<TableData::*> modules are modules that contain two-dimensional table data. The
 table can be accessed via a standard interface (see
 L<TableDataRole::Spec::Basic>). An example of table data would be list of
-countries along with their names and country code, or a list of CPAN authors
-along with their published email addresses.
+countries along with their names, country codes, and other fields; or a list of
+CPAN authors along with their CPAN IDs, full names, published email addresses,
+and other fields.
 
 Why put data in a Perl module, as a Perl distribution? To leverage the Perl/CPAN
 toolchain and infrastructure: 1) ease of installation, update, and
 uninstallation; 2) allowing dependency expression and version comparison; 3)
 ease of packaging further as OS packages, e.g. Debian packages (converted from
-Perl distribution); 4) testing by CPAN Testers.
+Perl distribution); 4) testing by CPAN Testers. It also provides standard
+namespace/naming hierarchy.
 
 The table data can actually be stored as CSV in the DATA section of a Perl
 module, or as a CSV file in a shared directory of a Perl distribution, or a Perl
-structure in the module source code, or from other sources.
+structure in the module source code, or a SQLite database, or from other
+sources.
 
 The standard interface provides a convenient and consistent way to access the
 data, from accessing the rows, getting the column names, and dumping to CSV or
@@ -60,6 +61,10 @@ C<TableData::People::AcmeInc>.
 
 More specific subnamespaces for more specific types of table data are described
 in entries below.
+
+=head2 TableData::Business::*
+
+Like C<Business::> namespace in CPAN.
 
 =head2 TableData::Calendar::*
 
